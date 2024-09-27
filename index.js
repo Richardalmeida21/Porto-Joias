@@ -1,11 +1,11 @@
 var swiper = new Swiper(".mySwiper", {
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-  });
+});
 
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const categoriasLink = document.getElementById('categorias-link');
     const dropdownContent = document.getElementById('dropdown-content');
 
@@ -24,7 +24,9 @@ var swiper = new Swiper(".mySwiper", {
     });
 });
 
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    const basePathAliancas = `${window.location.origin}/images/Alianças/`;
+    
     // Carregar o arquivo aliancas.json e gerar os slides dinamicamente para o novo carrossel
     fetch('aliancas.json')
         .then(response => response.json())
@@ -33,7 +35,7 @@ var swiper = new Swiper(".mySwiper", {
             data.forEach(item => {
                 const slide = `
                     <div class="swiper-slide">
-                        <img src="images/Alianças/${item.imagem}" alt="${item.imagem}">
+                        <img src="${basePathAliancas}${item.imagem}" alt="${item.descricao}">
                     </div>
                 `;
                 swiperWrapperNew.innerHTML += slide;
@@ -41,42 +43,42 @@ var swiper = new Swiper(".mySwiper", {
 
             // Inicializar Swiper para o novo carrossel
             const swiperNew = new Swiper('.mySwiperNew', {
-              slidesPerView: 4,
-              spaceBetween: 30,
-              pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-              },
-              navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-              },
-              // Desativar rolagem lateral
-              allowTouchMove: false,
-              breakpoints: {
-                1440: {
-                  slidesPerView: 6,
-                  spaceBetween: 40,
-                  },
-                  1024: {
-                      slidesPerView: 4,
-                      spaceBetween: 30,
-                  },
-                  768: {
-                      slidesPerView: 2,
-                      spaceBetween: 20,
-                  },
-                  450: {
-                      slidesPerView: 1,
-                      spaceBetween: 10,
-                  },
-              },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                allowTouchMove: false,
+                breakpoints: {
+                    1440: {
+                        slidesPerView: 6,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    450: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                },
             });
         })
         .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    const basePathAliancas = `${window.location.origin}/images/Alianças/`;
+    const basePathBrincos = `${window.location.origin}/images/Brincos/`;
+
     // Carregar o arquivo aliancas.json e gerar os slides dinamicamente para o carrossel de alianças
     fetch('aliancas.json')
         .then(response => response.json())
@@ -85,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data.forEach(item => {
                 const slide = `
                     <div class="swiper-slide">
-                        <img src="images/aliancas/${item.imagem}" alt="${item.descricao}">
+                        <img src="${basePathAliancas}${item.imagem}" alt="${item.descricao}">
                     </div>
                 `;
                 swiperWrapperAliancas.innerHTML += slide;
@@ -111,11 +113,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         spaceBetween: 30,
                     },
                     768: {
-                        slidesPerView: 2,
+                        slidesPerView: 3,
                         spaceBetween: 20,
                     },
                     450: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                         spaceBetween: 10,
                     },
                 },
@@ -131,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data.forEach(item => {
                 const slide = `
                     <div class="swiper-slide">
-                        <img src="images/brincos/${item.imagem}"">
+                        <img src="${basePathBrincos}${item.imagem}" alt="${item.imagem}">
                     </div>
                 `;
                 swiperWrapperBrincos.innerHTML += slide;
@@ -157,11 +159,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         spaceBetween: 30,
                     },
                     768: {
-                        slidesPerView: 2,
+                        slidesPerView: 3,
                         spaceBetween: 20,
                     },
                     450: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                         spaceBetween: 10,
                     },
                 },
@@ -169,12 +171,11 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
 
-         // Menu hambúrguer para dispositivos móveis
- const menuBtn = document.getElementById('menu-btn');
- const navLinks = document.getElementById('nav-links');
+    // Menu hambúrguer para dispositivos móveis
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
 
- menuBtn.addEventListener('click', () => {
-     navLinks.classList.toggle('show');
- });
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
 });
-
