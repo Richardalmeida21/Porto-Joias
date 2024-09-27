@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data.forEach(item => {
                 const slide = `
                     <div class="swiper-slide">
-                        <img src="images/brincos/${item.imagem}" alt="${item.descricao}">
+                        <img src="images/brincos/${item.imagem}"">
                     </div>
                 `;
                 swiperWrapperBrincos.innerHTML += slide;
