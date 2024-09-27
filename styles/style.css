@@ -3,6 +3,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--clr-white);
 }
 
 .container-header {
