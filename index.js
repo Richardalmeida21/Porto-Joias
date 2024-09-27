@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data.forEach(item => {
                 const slide = `
                     <div class="swiper-slide">
-                        <img src="images/aliancas/${item.imagem}" alt="${item.descricao}">
+                        <img src="images/Alianças/${item.imagem}" alt="${item.descricao}">
                     </div>
                 `;
                 swiperWrapperAliancas.innerHTML += slide;
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data.forEach(item => {
                 const slide = `
                     <div class="swiper-slide">
-                        <img src="images/brincos/${item.imagem}"">
+                        <img src="images/Brincos/${item.imagem}"">
                     </div>
                 `;
                 swiperWrapperBrincos.innerHTML += slide;
